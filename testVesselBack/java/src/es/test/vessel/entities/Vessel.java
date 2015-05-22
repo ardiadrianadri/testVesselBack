@@ -3,6 +3,7 @@ package es.test.vessel.entities;
 import java.io.Serializable;
 import java.math.BigInteger;
 
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="vessels")
@@ -18,7 +19,7 @@ public class Vessel implements Serializable {
 	private Float width;
 	private Float length;
 	private Float draft;
-	private GeoPoint point;
+	private GeoJsonPoint point;
 	
 	public BigInteger getId() {
 		return id;
@@ -50,10 +51,10 @@ public class Vessel implements Serializable {
 	public void setDraft(Float draft) {
 		this.draft = draft;
 	}
-	public GeoPoint getPoint() {
+	public GeoJsonPoint getPoint() {
 		return point;
 	}
-	public void setPoint(GeoPoint point) {
+	public void setPoint(GeoJsonPoint point) {
 		this.point = point;
 	}
 }

@@ -7,5 +7,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import es.test.vessel.entities.Harbor;
 
 public interface HarborRepository extends PagingAndSortingRepository<Harbor, BigInteger>{
-
+	
 }
