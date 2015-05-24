@@ -6,6 +6,10 @@ import java.math.BigInteger;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import es.test.vessel.transformers.GeoJsonBasicSerialize;
+
 @Document(collection="vessels")
 public class Vessel implements Serializable {
 
@@ -19,6 +23,7 @@ public class Vessel implements Serializable {
 	private Float width;
 	private Float length;
 	private Float draft;
+	@JsonDeserialize(using = GeoJsonBasicSerialize.class)
 	private GeoJsonPoint point;
 	
 	public BigInteger getId() {
